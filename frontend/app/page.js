@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Login from '../components/Login';
 import DailyMissionsTracker from '../components/DailyMissionsTracker';
+import styles from '../styles/Login.module.css';
+
 
 const HomePage = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -30,7 +32,7 @@ const HomePage = () => {
     <div>
       {isAuthenticated ? (
         <div>
-          <button onClick={handleLogout}>Logout</button>
+          <button className={styles.logout} onClick={handleLogout}>Logout</button>
           <DailyMissionsTracker />
         </div>
       ) : (
